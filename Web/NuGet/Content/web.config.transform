@@ -1,0 +1,31 @@
+﻿<configuration>
+  <appSettings>
+    <add key="Phnyx.Web.Security.Nonce.Timeout" value="120" />
+    <add key="Phnyx.Web.Security.Authentication.CookieName" value="HASH_AUTH" />
+    <add key="Phnyx.Web.Security.Authentication.AuthenticationBridge" value="" />
+    <add key="Phnyx.Web.Security.Crypto.Encrypter.EncryptionSecret" value="Running problem" />
+    <add key="Phnyx.Web.Security.Crypto.Encrypter.EncryptionSalt" value="abcdefgh" />
+    <add key="Phnyx.Web.Security.OAuth.CallbackUrl" value="http://run4it.dk/oauth_callback.ashx" />
+    <add key="Phnyx.Web.Security.OAuth.ErrorUrl" value="~/oauth_error.aspx" />
+    <add key="Phnyx.Web.Security.OAuth.Facebook.ClientID" value="297689636446"/>
+    <add key="Phnyx.Web.Security.OAuth.Facebook.ClientSecret" value="4054ce2468b28a50de8d47b1c384ef41"/>
+    <add key="Phnyx.Web.Security.OAuth.Google.ClientID" value="536314215033.apps.googleusercontent.com"/>
+    <add key="Phnyx.Web.Security.OAuth.Google.ClientSecret" value="HW25qeYeDS0Z2bdlST1UP9iu"/>
+    <add key="Phnyx.Web.Security.OAuth.MSAccount.ClientID" value="000000004C0E8ABD"/>
+    <add key="Phnyx.Web.Security.OAuth.MSAccount.ClientSecret" value="a45wEHKwVwwPWsv6EktOYJy9ftaOKUQH"/>
+  </appSettings>
+  <system.web>
+  </system.web>
+  <system.webServer>
+    <modules>
+      <add name="Phnyx.Web.Security.Authentication" type="Phnyx.Web.Security.AuthenticationModule, Phnyx.Web" />
+    </modules>
+    <handlers>
+      <add name="Phnyx.Web.Security.OAuth.CallbackHandler" path="oauth_callback.ashx" verb="GET" type="Phnyx.Web.Security.OAuth.CallbackHandler, Phnyx.Web" />
+    </handlers>
+  </system.webServer>
+  <system.diagnostics>
+    <sources>
+    </sources>
+  </system.diagnostics>
+</configuration>
